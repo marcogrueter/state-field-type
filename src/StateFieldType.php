@@ -1,4 +1,4 @@
-<?php namespace Addon\FieldType\State;
+<?php namespace Streams\Addon\FieldType\State;
 
 use Streams\Core\Addon\FieldTypeAbstract;
 
