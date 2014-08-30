@@ -12,13 +12,6 @@ class StateFieldType extends FieldTypeAbstract
     public $columnType = 'string';
 
     /**
-     * Field type version
-     *
-     * @var string
-     */
-    public $version = '1.1.0';
-
-    /**
      * Available field type settings.
      *
      * @var array
@@ -28,79 +21,25 @@ class StateFieldType extends FieldTypeAbstract
     );
 
     /**
-     * Field type author information.
-     *
-     * @var array
-     */
-    public $author = array(
-        'name' => 'AI Web Systems, Inc.',
-        'url'  => 'http://aiwebsystems.com/',
-    );
-
-    /**
      * Return the input used for forms.
      *
      * @return mixed
      */
-    public function formInput()
+    public function input()
     {
-        if ($states = $this->getStates() and !$this->field->is_required) {
-            $states = array(null => $this->getPlaceholder()) + $states;
-        }
-
         return \Form::select(
-            $this->formSlug,
-            $states,
-            $this->value
+            $this->inputName(),
+            $this->states(),
+            $this->value()
         );
     }
 
     /**
-     * Return the string output value.
-     *
-     * @return null
-     */
-    public function stringOutput()
-    {
-        return $this->getState($this->value);
-    }
-
-    /**
-     * Return the plugin output value.
-     *
-     * @return null
-     */
-    public function pluginOutput()
-    {
-        if ($this->value) {
-            return array(
-                'name' => $this->getState($this->value),
-                'code' => $this->value,
-            );
-        }
-
-        return null;
-    }
-
-    /**
-     * Get the state name from it's code.
-     *
-     * @param null $code
-     * @return null
-     */
-    public function getState($code)
-    {
-        $states = $this->getStates();
-
-        return isset($states[$code]) ? $states[$code] : null;
-    }
-
-    /**
-     * Get state options as an associative array.
+     * Return state options as an associative array.
      *
      * @return array
      */
-    public function getStates()
+    protected function states()
     {
         return array(
             'United States' => array(
