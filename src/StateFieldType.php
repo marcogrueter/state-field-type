@@ -1,8 +1,8 @@
-<?php namespace Anomaly\Streams\FieldType\State;
+<?php namespace Anomaly\Streams\Addon\FieldType\State;
 
-use Streams\Core\Addon\FieldTypeAbstract;
+use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeAddon;
 
-class StateFieldType extends FieldTypeAbstract
+class StateFieldType extends FieldTypeAddon
 {
     /**
      * The database column type this field type uses.
