@@ -4,6 +4,8 @@ use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeAddon;
 
 class StateFieldType extends FieldTypeAddon
 {
+    protected $slug = 'state';
+
     /**
      * The database column type this field type uses.
      *
@@ -30,7 +32,7 @@ class StateFieldType extends FieldTypeAddon
         return \Form::select(
             $this->inputName(),
             $this->states(),
-            $this->value()
+            $this->value
         );
     }
 
