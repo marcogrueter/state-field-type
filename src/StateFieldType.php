@@ -4,29 +4,10 @@ use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeAddon;
 
 class StateFieldType extends FieldTypeAddon
 {
-    protected $slug = 'state';
-
-    /**
-     * The database column type this field type uses.
-     *
-     * @var string
-     */
-    public $columnType = 'string';
-
-    /**
-     * Available field type settings.
-     *
-     * @var array
-     */
     public $settings = array(
         'countries',
     );
 
-    /**
-     * Return the input used for forms.
-     *
-     * @return mixed
-     */
     public function input()
     {
         return \Form::select(
@@ -36,11 +17,6 @@ class StateFieldType extends FieldTypeAddon
         );
     }
 
-    /**
-     * Return state options as an associative array.
-     *
-     * @return array
-     */
     protected function states()
     {
         return array(
