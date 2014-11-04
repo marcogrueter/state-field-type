@@ -1,8 +1,8 @@
 <?php namespace Anomaly\Streams\Addon\FieldType\State;
 
-use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeAddon;
+use Anomaly\Streams\Platform\Addon\FieldType\FieldType;
 
-class StateFieldType extends FieldTypeAddon
+class StateFieldType extends FieldType
 {
     public $settings = array(
         'countries',
