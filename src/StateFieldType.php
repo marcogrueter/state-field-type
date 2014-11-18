@@ -73,7 +73,7 @@ class StateFieldType extends FieldType
     public function getStates($country = null)
     {
         $countries = [
-            'US' => [
+            'USA' => [
                 'country' => 'United States',
                 'states'  => [
                     'AL' => 'Alabama',
