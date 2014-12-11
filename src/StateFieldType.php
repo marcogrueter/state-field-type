@@ -50,7 +50,7 @@ class StateFieldType extends FieldType
     {
         $options = [];
 
-        $country = $this->getConfig('country');
+        $country = $this->pullConfig('country');
 
         foreach ($this->getStates($country) as $value => &$title) {
 
